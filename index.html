@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
-  <meta charset="UTF-8" />
-  <title>jQuery DOM elements</title>
-  <link rel="stylesheet" href="./assets/css/jass.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Time for a Pop Quiz!</title>
+    <link rel="stylesheet" href="assets\css\normalize.css" />
+    <link rel="stylesheet" href="assets\css\style.css" />
+  </head>
 
-</head>
+  <body>
+    <div class="scores" id="highscores"><a href="highscores.html"> View high scores</a></div>
+    <div class="timer"> Time: <span id="time">0</span></div>
 
-<body class="bg-dark text-light text-center">
-  <!-- This empty `<div>` will anchor the elements we create with jQuery. -->
-  <div class="m-5" id="root"></div>
+    <div class="wrapper flex-center flex-column">
+      <div id="quizBox" class="quiz-info">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit.  
+          Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+        <button class="btn" id="btn-start">Start Quiz</button>
+      </div>
 
-  <!-- Added link to the jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="answer-options" class="answer-options"></div>
+      </div>
 
-  <script type="text/javascript" src="./assets/js/script.js"></script>
-</body>
+      <div id="quiz-finished" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is: <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="user-initials" maxlength="3"/>
+          <button class="btn" id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div id="right-wrong" class="right-wrong hide"></div>
+    </div>
+
+    <script src="assets\js\questions.js"></script>
+    <script src="assets\js\script.js"></script>
+    
+  </body>
 
 </html>
